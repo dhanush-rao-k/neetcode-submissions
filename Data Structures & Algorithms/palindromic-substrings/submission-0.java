@@ -1,0 +1,30 @@
+class Solution {
+    public int countSubstrings(String s) {
+        int counter=0;
+        for(int i=0;i<s.length();i++)
+        {
+            int l=i;
+            int r=i;
+            while(l>=0 && r<s.length() && s.charAt(l)==s.charAt(r))
+            {
+                counter++;
+                l--;
+                r++;
+            }
+        }
+        for(int i=0;i<s.length();i++)
+        {
+            int l=i;
+            int r=i+1;
+            while(l>=0 && r<s.length() && s.charAt(l)==s.charAt(r))
+            {
+                counter++;
+                l--;
+                r++;
+            }
+        }
+
+        return counter;
+        
+    }
+}
